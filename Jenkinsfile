@@ -4,9 +4,9 @@ pipeline {
     }
     agent any
     stages {
-        stage('Preparation') {
-            // Preparation command
-        }
+        // stage('Preparation') {
+        //     // Preparation command
+        // }
         stage('DB Migration') {
             when {
                 tag '*with-db*'
@@ -15,11 +15,11 @@ pipeline {
                 sh 'migrate -path db/script -database "mysql://%CREDS_USR%:%CREDS_PSW%@tcp(localhost:3306)/test" -verbose up'
             }
         }
-        stage('Build') {
-            //Build command     
-        }
-        stage('Send Slack') {
-            // Send slack
-        }
+        // stage('Build') {
+        //     //Build command     
+        // }
+        // stage('Send Slack') {
+        //     // Send slack
+        // }
     }
 }
