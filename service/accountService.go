@@ -21,6 +21,10 @@ type DefaultAccountService struct {
 	repo domain.AccountRepository
 }
 
+func NewAccountService(repo domain.AccountRepository) DefaultAccountService {
+	return DefaultAccountService{repo}
+}
+
 func (s DefaultAccountService) NewAccount(req dto.NewAccountRequest) (*dto.NewAccountResponse, *errs.AppError) {
 
 	// incoming request validation
@@ -78,8 +82,4 @@ func (s DefaultAccountService) MakeTransaction(req dto.TransactionRequest) (*dto
 	}
 	response := transaction.ToDto()
 	return &response, nil
-}
-
-func NewAccountService(repo domain.AccountRepository) DefaultAccountService {
-	return DefaultAccountService{repo}
 }
