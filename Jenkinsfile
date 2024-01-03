@@ -12,7 +12,7 @@ pipeline {
                 tag '*with-db*'
             }
             steps {
-                sh 'migrate -path db/script -database "mysql://%CREDS_USR%:%CREDS_PSW%@tcp(localhost:3306)/test" -verbose up'
+                sh 'migrate -path db -database "mysql://%CREDS_USR%:%CREDS_PSW%@tcp(localhost:3306)/test" -verbose up'
             }
         }
         // stage('Build') {
