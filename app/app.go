@@ -72,5 +72,5 @@ func getDbClient() *sqlx.DB {
 
 	return client
 
-	// testgit tag8 lrdbm 
+	// testgit tag10 with-db
 }
