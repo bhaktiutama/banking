@@ -71,4 +71,6 @@ func getDbClient() *sqlx.DB {
 	client.SetMaxIdleConns(10)
 
 	return client
+
+	// testgit tag1
 }
