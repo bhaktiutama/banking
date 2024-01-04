@@ -1,0 +1,1 @@
+ALTER TABLE test.test ADD address varchar(100) NULL;
